@@ -137,6 +137,21 @@ p { color: var(--charcoal-soft); }
   padding: 1.35rem 0;
   transition: padding 0.4s var(--ease), background 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
+.promo-bar {
+  background: var(--charcoal);
+  text-align: center;
+  overflow: hidden;
+  max-height: 44px;
+  transition: max-height 0.4s var(--ease), padding 0.4s var(--ease), opacity 0.3s ease;
+  padding: 0.6rem 1rem;
+}
+.promo-bar a {
+  color: var(--rose-gold-light);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+.promo-bar strong { color: var(--ivory); }
+.site-header.is-scrolled .promo-bar { max-height: 0; padding: 0 1rem; opacity: 0; }
 .site-header .container {
   display: flex;
   align-items: center;
@@ -281,7 +296,7 @@ body.nav-locked { overflow: hidden; }
   display: flex;
   align-items: center;
   position: relative;
-  padding-top: 6rem;
+  padding-top: 7.5rem;
   overflow: hidden;
   background: var(--charcoal);
   color: var(--ivory);
