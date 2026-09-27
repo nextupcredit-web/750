@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>About Natasha Barjon | 757esthetics</title>
 <meta name="description" content="Meet Natasha Barjon — Navy Veteran, licensed esthetician, NCEA Certified and ASCP Member, and founder of 757esthetics in Virginia Beach, VA." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%232a2521'/%3E%3Ctext x='50' y='66' font-size='58' text-anchor='middle' fill='%23d9b48f' font-family='Georgia,serif'%3E7%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='30' fill='%2393683f'/%3E%3Ctext x='50' y='62' font-size='32' text-anchor='middle' fill='%23faf6f1' font-family='Georgia,serif' font-weight='700'%3E757%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -16,8 +16,11 @@
 <header class="site-header">
   <div class="container">
     <a href="index.html" class="brand">
-      <span class="brand-name">757esthetics</span>
-      <span class="brand-sub">Your Skin Concierge</span>
+      <span class="logo-badge" aria-hidden="true">757</span>
+      <span class="brand-text">
+        <span class="brand-name">757esthetics</span>
+        <span class="brand-sub">Your Skin Concierge</span>
+      </span>
     </a>
     <nav class="nav-desktop">
       <a href="index.html">Home</a>
@@ -27,12 +30,18 @@
       <a href="gallery.html">Gallery</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div class="header-cta">
-      <a href="contact.html#book" class="btn btn-primary btn-sm">Book Now</a>
+    <div class="header-actions">
+      <div class="header-cta">
+        <a href="contact.html#book" class="btn btn-primary btn-sm">Book Now</a>
+      </div>
+      <a href="shop.html" class="cart-link" aria-label="View cart">
+        <span class="cart-icon">&#128717;</span>
+        <span class="cart-count" data-cart-count>0</span>
+      </a>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </header>
 
@@ -187,7 +196,10 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <span class="brand-name">757esthetics</span>
+        <div class="footer-logo">
+          <span class="logo-badge" aria-hidden="true">757</span>
+          <span class="brand-name">757esthetics</span>
+        </div>
         <p style="margin-top:1rem;max-width:32ch;">Corrective skincare, personalized for you — by licensed esthetician Natasha Barjon in Virginia Beach, VA.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/757esthetics/" aria-label="Instagram" target="_blank" rel="noopener">IG</a>

@@ -106,11 +106,13 @@ p { color: var(--charcoal-soft); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   gap: 0.55rem;
   padding: 1rem 2.1rem;
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 500;
+  line-height: 1;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -166,6 +168,13 @@ p { color: var(--charcoal-soft); }
   .promo-bar a { font-size: 0.7rem; }
   .promo-bar .promo-extra { display: none; }
 }
+
+@media (max-width: 400px) {
+  .logo-badge { width: 34px; height: 34px; font-size: 0.78rem; border-radius: 11px; }
+  .brand-name { font-size: 1.15rem; }
+  .brand-sub { font-size: 0.5rem; letter-spacing: 0.16em; }
+  .header-actions { gap: 0.35rem; }
+}
 .site-header .container {
   display: flex;
   align-items: center;
@@ -180,23 +189,54 @@ p { color: var(--charcoal-soft); }
 }
 .brand {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
   line-height: 1;
   z-index: 620;
 }
+.logo-badge {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, var(--rose-gold-light), var(--rose-gold-dark));
+  color: var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  box-shadow: 0 6px 16px rgba(147, 104, 63, 0.35);
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.15;
+}
 .brand-name {
   font-family: var(--ff-display);
-  font-size: 1.55rem;
+  font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--charcoal);
+  white-space: nowrap;
 }
 .brand-sub {
-  font-size: 0.58rem;
-  letter-spacing: 0.32em;
+  font-size: 0.56rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--rose-gold-dark);
-  margin-top: 0.3rem;
+  margin-top: 0.25rem;
+  white-space: nowrap;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
 }
 
 .nav-desktop {
@@ -228,6 +268,34 @@ p { color: var(--charcoal-soft); }
 .header-cta { display: flex; align-items: center; gap: 1rem; }
 
 /* Hamburger (mobile) */
+.cart-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.cart-icon { font-size: 1.25rem; line-height: 1; }
+.cart-count {
+  position: absolute;
+  top: -2px; right: -2px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--rose-gold-dark);
+  color: var(--white);
+  font-size: 0.62rem;
+  font-weight: 600;
+  line-height: 17px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.cart-count[data-empty="true"] { display: none; }
+.site-header.is-scrolled .cart-icon { filter: none; }
+
 .hamburger {
   display: none;
   position: relative;
@@ -782,6 +850,8 @@ body.nav-locked { overflow: hidden; }
 .site-footer { background: var(--charcoal); color: rgba(250,246,241,0.7); padding: 5rem 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 2.5rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
 .footer-brand .brand-name { color: var(--ivory); }
+.footer-logo { display: flex; align-items: center; gap: 0.65rem; }
+.footer-logo .brand-name { font-size: 1.3rem; }
 .footer-grid h5 { color: var(--ivory); font-family: var(--ff-body); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.2rem; }
 .footer-grid li { margin-bottom: 0.7rem; }
 .footer-grid a:hover { color: var(--rose-gold-light); }
