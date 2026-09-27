@@ -63,20 +63,20 @@ details found in it:
 2. **Facebook/TikTok** — not confirmed in the source PDF, so those icons were
    removed rather than guessed. Add them back (in the header/footer/mobile nav
    `<div class="footer-social">` / `mobile-nav-social` blocks) if Natasha has them.
-3. **Shop** — `shop.html` showcases her 4 confirmed Essentials Regimen Kits
-   (name pattern + the exact `sensitive-essentials-regimen-kit` slug
-   confirmed by the product URL in the task) as premium editorial cards, plus
-   category tiles for the rest of the catalog (cleansers, serums, masks,
-   moisturizers). Every product links straight out to her live store to
-   complete the purchase there — by design, there's no cart or checkout on
-   this site itself. The category names/descriptions were only visible as a
-   low-resolution screenshot, not reliable enough to read exact product
-   names/prices from, so those stay as category-level links rather than
-   individual product cards. **To finish the catalog**: send the real product
-   names, prices, and photos (a CSV/list export from Wix Products works well)
-   and each one can be added as its own card, still linking out to buy. Once
-   Natasha's Shopify store replaces the current Wix store, these links just
-   need to be swapped to the new Shopify product URLs.
+3. ~~Shop~~ — done, with real data throughout. `shop.html` features her 4
+   real Circadia Essentials Regimen Kits — Sensitive ($150), Acne ($123),
+   Anti-Aging ($243), and Discovery ($162) — each with its real product
+   photo (cropped from photos the user provided, saved to `assets/img/`),
+   real name, and real price, confirmed against a screenshot of her live
+   store. Every kit links straight out to her live store to complete the
+   purchase there — by design, there's no cart or checkout on this site
+   itself. The rest of the catalog (cleansers, serums, masks, moisturizers)
+   is shown as category-level links for now since individual product
+   names/prices for those weren't provided. **To finish the catalog**: send
+   the same info for the remaining products (name, price, photo) and each
+   can be added as its own card the same way. Once Natasha's Shopify store
+   replaces the current Wix store, every link just needs to be swapped to
+   the new Shopify product URLs.
 4. **Gift Cards, Loyalty, Blog** — these are real sections of the live site
    (real URLs: `/gift-card`, `/loyalty`, `/blog`) but each depends on a Wix
    app that doesn't port to a static site as-is. Not rebuilt here — worth a

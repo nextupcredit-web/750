@@ -612,36 +612,24 @@ body.nav-locked { overflow: hidden; }
   transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
 }
 .kit-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lift); }
-.kit-swatch {
-  position: relative;
+.kit-photo {
   aspect-ratio: 4 / 3;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: linear-gradient(160deg, var(--ivory), var(--cream));
+  padding: 1.2rem;
 }
-.kit-swatch::after {
-  content: "";
-  position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
+.kit-photo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.6s var(--ease);
 }
-.kit-mono {
-  font-family: var(--ff-display);
-  font-weight: 600;
-  font-size: 1.5rem;
-  letter-spacing: 0.04em;
-  position: relative;
-  z-index: 1;
-}
-.kit-swatch-01 { background: linear-gradient(160deg, var(--ivory), var(--blush)); }
-.kit-swatch-01 .kit-mono { color: rgba(147, 104, 63, 0.45); }
-.kit-swatch-02 { background: linear-gradient(160deg, var(--blush), var(--rose-gold-light)); }
-.kit-swatch-02 .kit-mono { color: rgba(147, 104, 63, 0.5); }
-.kit-swatch-03 { background: linear-gradient(160deg, var(--cream), var(--rose-gold-light)); }
-.kit-swatch-03 .kit-mono { color: rgba(147, 104, 63, 0.5); }
-.kit-swatch-04 { background: linear-gradient(160deg, var(--charcoal-soft), var(--charcoal)); }
-.kit-swatch-04 .kit-mono { color: rgba(250, 246, 241, 0.35); }
+.kit-card:hover .kit-photo img { transform: scale(1.05); }
 .kit-card-body {
   padding: 1.6rem 1.5rem 1.8rem;
   display: flex;
@@ -655,7 +643,13 @@ body.nav-locked { overflow: hidden; }
   color: var(--rose-gold-dark);
   margin-bottom: 0.5rem;
 }
-.kit-card-body h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.kit-card-body h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+.kit-price {
+  font-family: var(--ff-display);
+  font-size: 1.15rem;
+  color: var(--rose-gold-dark);
+  margin-bottom: 0.8rem;
+}
 .kit-card-body p { flex: 1; margin-bottom: 1.1rem; }
 .kit-card-body .card-link { margin-top: 0; }
 
