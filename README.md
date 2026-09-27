@@ -10,7 +10,7 @@ on any static host (GitHub Pages, Netlify, Vercel, etc.).
 - `services.html` — Full real service menu with pricing and real "Book Now" links
 - `events.html` — Specials &amp; Spa Parties (seasonal offers, Master Esthetics scope)
 - `gallery.html` — Studio photo gallery with lightbox
-- `contact.html` — Booking (Calendly-ready), studio info, map, FAQ
+- `contact.html` — Booking (ready for GlossGenius or similar), studio info, map, FAQ
 - `shop.html` — Shop: an editorial showcase of her real regimen kits and
   product categories, each linking straight out to her live store to buy
 - `privacy.html` / `terms.html` — Legal placeholders
@@ -83,20 +83,29 @@ details found in it:
    follow-up conversation about whether to keep those on Wix, link out to
    them, or replace with a different platform (Shopify's own gift cards and
    a blog app could replace these once she's moved over).
-4. **Live booking calendar (Calendly)** — the Contact page is wired up so
-   Natasha can manage her own availability from her phone and get an email the
-   instant someone books. To activate it:
-   1. Natasha creates a free account at calendly.com with her own email and
-      connects her phone's calendar (so it blocks off busy times automatically).
-   2. She sets up her event type (e.g. "Skin Consultation" or "First Time
-      Client Facial") and copies its scheduling link (looks like
-      `https://calendly.com/her-name/consultation`).
-   3. Paste that link into `assets/js/config.js` as `calendlyUrl`. That's the
-      only change needed — the calendar widget will automatically appear on
-      the Contact page above the request form.
+4. **Live booking calendar (GlossGenius or similar)** — Natasha plans to set
+   up online booking through GlossGenius (a booking platform built for
+   beauty/spa businesses — Vagaro, Acuity, or Square Appointments would work
+   the same way). Every "Book Now" button and link across the entire site is
+   wired to activate the moment it's set up:
+   1. Natasha creates her GlossGenius account and sets her availability there
+      — she'll manage her hours and get an email the instant someone books.
+   2. She copies her public booking page link (looks like
+      `https://book.glossgenius.com/her-business-name`).
+   3. Paste that link into `assets/js/config.js` as `bookingUrl`. That's the
+      only change needed — every "Book Now" button sitewide (header, mobile
+      menu, every CTA) will then open her real booking page in a new tab
+      instead of the on-site request form, and the Contact page will show a
+      "Book Online Instantly" prompt above the form.
    Until that link is added, the site shows the "Request an Appointment" form
-   below as a working fallback (it displays a confirmation message on submit,
-   but doesn't send anywhere yet).
+   on the Contact page as a working fallback (it opens a pre-filled email to
+   admin@757esthetics.com on submit — see the note above about that form).
+
+   *(A fully custom-built calendar — her own database, availability admin
+   page, and email notifications, all matching the site's exact branding —
+   was considered and is technically possible, but was scoped out in favor
+   of GlossGenius: it's a multi-day build versus an existing, tested product
+   that already handles reminders, rescheduling, and no-show fees.)*
 5. **Map embed** — `contact.html` points to the real address via a public
    Google Maps search-embed URL (no API key needed); swap in an official
    Google My Business embed if Natasha has one claimed.

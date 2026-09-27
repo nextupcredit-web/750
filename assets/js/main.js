@@ -221,19 +221,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Calendly live booking calendar ---------- */
-  const calendlyUrl = window.SITE_CONFIG && window.SITE_CONFIG.calendlyUrl;
-  if (calendlyUrl) {
-    const section = document.getElementById('calendly-section');
-    const widget = document.querySelector('.calendly-inline-widget');
-    if (section && widget) {
-      widget.dataset.url = calendlyUrl;
-      section.style.display = '';
-      const script = document.createElement('script');
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.async = true;
-      document.body.appendChild(script);
-    }
+  /* ---------- External booking link (GlossGenius, Vagaro, Acuity, etc.) ---------- */
+  const bookingUrl = window.SITE_CONFIG && window.SITE_CONFIG.bookingUrl;
+  if (bookingUrl) {
+    document.querySelectorAll('a[href="contact.html#book"], a[href="#book"]').forEach((link) => {
+      link.href = bookingUrl;
+      link.target = '_blank';
+      link.rel = 'noopener';
+    });
+    const section = document.getElementById('external-booking-section');
+    if (section) section.style.display = '';
   }
 
   /* ---------- Active nav link highlight ---------- */
