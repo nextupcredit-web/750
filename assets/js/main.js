@@ -13,12 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Mobile hamburger menu ---------- */
   const hamburger = document.querySelector('.hamburger');
   const mobileNav = document.querySelector('.mobile-nav');
+  const mobileNavBackdrop = document.querySelector('.mobile-nav-backdrop');
   const body = document.body;
 
   function closeMobileNav() {
     if (!hamburger || !mobileNav) return;
     hamburger.setAttribute('aria-expanded', 'false');
     mobileNav.classList.remove('is-open');
+    mobileNavBackdrop?.classList.remove('is-open');
     body.classList.remove('nav-locked');
   }
 
@@ -27,12 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
       hamburger.setAttribute('aria-expanded', String(!isOpen));
       mobileNav.classList.toggle('is-open', !isOpen);
+      mobileNavBackdrop?.classList.toggle('is-open', !isOpen);
       body.classList.toggle('nav-locked', !isOpen);
     });
 
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeMobileNav);
     });
+
+    mobileNavBackdrop?.addEventListener('click', closeMobileNav);
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMobileNav();
@@ -168,11 +173,35 @@ document.addEventListener('DOMContentLoaded', () => {
   lightbox?.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
-  /* ---------- Contact / booking form (static demo) ---------- */
+  /* ---------- Contact / booking form: opens a pre-filled email to Natasha ---------- */
   const bookingForm = document.querySelector('#booking-form');
   if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      const getVal = (id) => (document.getElementById(id)?.value || '').trim();
+      const name = getVal('name');
+      const phone = getVal('phone');
+      const email = getVal('email');
+      const service = getVal('service');
+      const date = getVal('date');
+      const message = getVal('message');
+
+      const subject = `Appointment Request: ${service || 'General Inquiry'} — ${name}`;
+      const bodyLines = [
+        `Name: ${name}`,
+        `Phone: ${phone}`,
+        `Email: ${email}`,
+        `Service Interested In: ${service}`,
+        date ? `Preferred Date: ${date}` : null,
+        '',
+        'Notes:',
+        message || '(none)'
+      ].filter((line) => line !== null);
+
+      const mailtoUrl = `mailto:admin@757esthetics.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+      window.location.href = mailtoUrl;
+
       const success = document.querySelector('.form-success');
       bookingForm.style.display = 'none';
       success?.classList.add('is-visible');
