@@ -888,6 +888,7 @@ body.nav-locked { overflow: hidden; }
 .footer-social a:hover { background: var(--rose-gold); border-color: var(--rose-gold); }
 .footer-bottom { display:flex; justify-content: space-between; align-items:center; padding-top: 1.6rem; font-size: 0.78rem; flex-wrap: wrap; gap: 1rem; }
 .footer-bottom a:hover { color: var(--rose-gold-light); }
+.powered-by { opacity: 0.6; font-size: 0.72rem; }
 
 /* ---------- Page hero (interior pages) ---------- */
 .page-hero {
