@@ -55,8 +55,9 @@ details found in it:
 
 ## Still placeholder / needs a decision
 
-1. **Testimonials** (`index.html`) — the PDF didn't include client reviews, so
-   these are still placeholder quotes. Replace with real ones (with permission).
+1. ~~Testimonials~~ — done. `index.html` now shows 4 real 5-star Google reviews
+   (Brandon McCray, Jameron Counts, R. HWK, Dwayne Lee), with a link to the
+   full review page.
 2. **Facebook/TikTok** — not confirmed in the source PDF, so those icons were
    removed rather than guessed. Add them back (in the header/footer/mobile nav
    `<div class="footer-social">` / `mobile-nav-social` blocks) if Natasha has them.
