@@ -11,6 +11,8 @@ on any static host (GitHub Pages, Netlify, Vercel, etc.).
 - `events.html` — Specials &amp; Spa Parties (seasonal offers, Master Esthetics scope)
 - `gallery.html` — Studio photo gallery with lightbox
 - `contact.html` — Booking (Calendly-ready), studio info, map, FAQ
+- `shop.html` — In-site shop: real regimen kits, working add-to-cart, cart
+  drawer, checkout (Shopify-ready — see below)
 - `privacy.html` / `terms.html` — Legal placeholders
 
 ## Design
@@ -61,13 +63,34 @@ details found in it:
 2. **Facebook/TikTok** — not confirmed in the source PDF, so those icons were
    removed rather than guessed. Add them back (in the header/footer/mobile nav
    `<div class="footer-social">` / `mobile-nav-social` blocks) if Natasha has them.
-3. **Shop, Gift Cards, Loyalty, Blog** — these are real sections of the live
-   site (real URLs: `/category/all-products`, `/gift-card`, `/loyalty`,
-   `/blog`) but each depends on a Wix app (Wix Stores, Wix Loyalty) that
-   doesn't port to a static site as-is. For now, `events.html` links out to the
-   real shop URL for the `newcustomer15` code; Gift Cards/Loyalty/Blog aren't
-   rebuilt. Worth a follow-up conversation about whether to keep those on Wix,
-   link out to them, or replace with a different platform.
+3. **Shop** — `shop.html` is a real, working in-site shop: it features her 4
+   confirmed Essentials Regimen Kits (name pattern + the exact
+   `sensitive-essentials-regimen-kit` slug confirmed by the product URL in the
+   task) with working "Add to Cart" buttons, a cart drawer (localStorage-based,
+   persists per browser), quantity controls, and a Checkout button. The rest
+   of her catalog (cleansers, serums, masks, moisturizers) was only visible as
+   a low-resolution screenshot — not reliable enough to read exact product
+   names/prices without risking misrepresenting real products, so those are
+   shown as category tiles linking out to the live store for now. **To finish
+   the catalog**: send the real product names, prices, and photos (a CSV/list
+   export from Wix Products works well) and they can be added as proper cards
+   with the same Add to Cart flow.
+
+   **Checkout today**: since there's no payment backend yet, clicking
+   Checkout opens an email order request to admin@757esthetics.com listing
+   the cart contents — Natasha follows up to arrange payment. **Once her
+   Shopify store is live**: paste its checkout/cart URL into
+   `shopifyCheckoutUrl` in `assets/js/config.js` and the Checkout button will
+   open that instead. Note this only redirects to Shopify — it doesn't
+   transfer the specific cart items into a Shopify cart automatically (that
+   needs Shopify's Buy Button/Storefront API wired up with her real store
+   credentials, which can be done once the store exists).
+4. **Gift Cards, Loyalty, Blog** — these are real sections of the live site
+   (real URLs: `/gift-card`, `/loyalty`, `/blog`) but each depends on a Wix
+   app that doesn't port to a static site as-is. Not rebuilt here — worth a
+   follow-up conversation about whether to keep those on Wix, link out to
+   them, or replace with a different platform (Shopify's own gift cards and
+   a blog app could replace these once she's moved over).
 4. **Live booking calendar (Calendly)** — the Contact page is wired up so
    Natasha can manage her own availability from her phone and get an email the
    instant someone books. To activate it:
