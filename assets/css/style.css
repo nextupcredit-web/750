@@ -937,6 +937,7 @@ body.nav-locked { overflow: hidden; }
 @media (max-width: 860px) {
   .nav-desktop, .header-cta .btn { display: none; }
   .hamburger { display: flex; }
+  .brand-sub { font-size: 0.5rem; letter-spacing: 0.14em; }
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
   .value-list { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
