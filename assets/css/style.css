@@ -378,7 +378,7 @@ body.nav-locked { overflow: hidden; }
   display: flex;
   align-items: center;
   position: relative;
-  padding-top: 7.5rem;
+  padding-top: 9.5rem;
   overflow: hidden;
   background: var(--charcoal);
   color: var(--ivory);
@@ -949,7 +949,6 @@ body.nav-locked { overflow: hidden; }
 
 @media (max-width: 560px) {
   .container { width: min(560px, 100% - 2rem); }
-  .hero { padding-top: 5.5rem; }
   .hero-stats { gap: 1.4rem; flex-wrap: wrap; }
   .field-row { grid-template-columns: 1fr; }
   .gallery-grid { columns: 1; }
