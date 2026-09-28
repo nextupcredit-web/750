@@ -169,10 +169,13 @@ p { color: var(--charcoal-soft); }
   .promo-bar .promo-extra { display: none; }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .brand-num, .brand-word { font-size: 1.15rem; }
-  .brand-sub { font-size: 0.5rem; letter-spacing: 0.16em; }
+  .brand-sub { font-size: 0.48rem; letter-spacing: 0.1em; }
   .header-actions { gap: 0.35rem; }
+}
+@media (max-width: 360px) {
+  .brand-sub { letter-spacing: 0.05em; }
 }
 .site-header .container {
   display: flex;
@@ -197,6 +200,9 @@ p { color: var(--charcoal-soft); }
   display: inline-flex;
   align-items: baseline;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 .brand-num {
   font-family: var(--ff-display);
@@ -221,6 +227,9 @@ p { color: var(--charcoal-soft); }
   color: var(--rose-gold-dark);
   margin-top: 0.3rem;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
   position: relative;
   padding-top: 0.3rem;
 }
